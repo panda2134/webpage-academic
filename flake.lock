@@ -37,7 +37,8 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "theme-papermod": "theme-papermod"
       }
     },
     "systems": {
@@ -53,6 +54,23 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "theme-papermod": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718995633,
+        "narHash": "sha256-Ko0ZwQlYlPg6dq0L8LFdA2Mw9q/Gr9PfmpTmuLloh8E=",
+        "ref": "refs/heads/master",
+        "rev": "9ea3bb0e1f3aa06ed7715e73b5fabb36323f7267",
+        "shallow": true,
+        "type": "git",
+        "url": "file:themes/PaperMod"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "file:themes/PaperMod"
       }
     }
   },

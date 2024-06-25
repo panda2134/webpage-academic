@@ -4,9 +4,13 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    theme-papermod = {
+      url = "git+file:themes/PaperMod?shallow=1"; 
+      flake = false; # avoid infinite recursion
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils }: 
+  outputs = { self, nixpkgs, theme-papermod, flake-utils }: 
     flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = nixpkgs.legacyPackages.${system};
@@ -25,6 +29,7 @@
 
         buildPhase = ''
           mkdir -p $out/var/www/
+          ${pkgs.rsync}/bin/rsync -rl ${theme-papermod} themes/PaperMod/
           hugo --destination $out/var/www/
         '';
       };
