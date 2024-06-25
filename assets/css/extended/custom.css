@@ -1,0 +1,13 @@
+.entry-content {
+  display: block;
+}
+
+.entry-content p {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.entry-content img {
+  float: right;
+  border-radius: 16px;
+}

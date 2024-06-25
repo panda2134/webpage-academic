@@ -9,6 +9,9 @@ mainsections = ["posts"]
 home = ['HTML', 'RSS', 'JSON']
 
 [params.homeInfoParams]
+imageUrl = "images/selfie.png"
+imageHeight = "174px"
+imageWidth = "120px"
 Title = "Hi there 👋"
 Content = """
 I'm a PhD student at University of Wisconsin - Madison, mainly studying programming languages, including formal verification and program synthesis.
