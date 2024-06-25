@@ -29,6 +29,7 @@
 
         buildPhase = ''
           mkdir -p $out/var/www/
+          mkdir -p themes
           ${pkgs.rsync}/bin/rsync -rl ${theme-papermod} themes/PaperMod/
           hugo --destination $out/var/www/
         '';
