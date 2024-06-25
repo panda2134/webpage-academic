@@ -26,10 +26,10 @@ jobs:
       - uses: actions/download-artifact@v4.1.7
         with:
           name: website
-          path: ~/website
+          path: ./website
       - uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: fa9724f039eed67065f2b3e14608b8e1
           projectName: webpage-academic
-          directory: ~/website
+          directory: ./website
