@@ -5,8 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     theme-papermod = {
-      url = "git+file:themes/PaperMod?shallow=1"; 
-      flake = false; # avoid infinite recursion
+      url = "github:adityatelange/hugo-PaperMod/9ea3bb0e1f3aa06ed7715e73b5fabb36323f7267"; 
+      flake = false;
     };
   };
 

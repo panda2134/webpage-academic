@@ -26,3 +26,6 @@ hugo.linux
 
 # for context: https://github.com/Homebrew/homebrew-bundle/pull/552
 Brewfile.lock.json
+
+# Nix
+result
