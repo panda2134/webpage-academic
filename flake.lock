@@ -37,7 +37,25 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "src": "src"
+      }
+    },
+    "src": {
+      "flake": false,
+      "locked": {
+        "dirtyRev": "786e6146549db5dd47a5fbe29c04c4d7d967f575-dirty",
+        "dirtyShortRev": "786e614-dirty",
+        "lastModified": 1719331493,
+        "narHash": "sha256-ADfKWv9mN/W/6IWaAujopQbfJAfNrBATV1MWCP3H3jE=",
+        "submodules": true,
+        "type": "git",
+        "url": "file:."
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "file:."
       }
     },
     "systems": {
