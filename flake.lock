@@ -38,24 +38,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
-        "src": "src"
-      }
-    },
-    "src": {
-      "flake": false,
-      "locked": {
-        "dirtyRev": "786e6146549db5dd47a5fbe29c04c4d7d967f575-dirty",
-        "dirtyShortRev": "786e614-dirty",
-        "lastModified": 1719331493,
-        "narHash": "sha256-ADfKWv9mN/W/6IWaAujopQbfJAfNrBATV1MWCP3H3jE=",
-        "submodules": true,
-        "type": "git",
-        "url": "file:."
-      },
-      "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "file:."
+        "theme-papermod": "theme-papermod"
       }
     },
     "systems": {
@@ -71,6 +54,23 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "theme-papermod": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718995633,
+        "narHash": "sha256-Ko0ZwQlYlPg6dq0L8LFdA2Mw9q/Gr9PfmpTmuLloh8E=",
+        "ref": "refs/heads/master",
+        "rev": "9ea3bb0e1f3aa06ed7715e73b5fabb36323f7267",
+        "shallow": true,
+        "type": "git",
+        "url": "file:themes/PaperMod"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "file:themes/PaperMod"
       }
     }
   },

@@ -4,13 +4,13 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    src = {
-      url = "git+file:.?submodules=1";
-      flake = false;  # not including this results in infinite recursion
+    theme-papermod = {
+      url = "git+file:themes/PaperMod?shallow=1"; 
+      flake = false; # avoid infinite recursion
     };
   };
 
-  outputs = { self, src, nixpkgs, flake-utils }: 
+  outputs = { self, nixpkgs, theme-papermod, flake-utils }: 
     flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = nixpkgs.legacyPackages.${system};
@@ -24,10 +24,12 @@
       packages.default = pkgs.stdenv.mkDerivation {
         pname = "webpage-academic";
         version = "1.0.0";
-        inherit src nativeBuildInputs;
+        inherit nativeBuildInputs;
+        src = ./.;
 
         buildPhase = ''
           mkdir -p $out/var/www/
+          ${pkgs.rsync}/bin/rsync -rl ${theme-papermod} themes/PaperMod/
           hugo --destination $out/var/www/
         '';
       };
