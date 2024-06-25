@@ -1,0 +1,35 @@
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+jobs:
+  build:
+    name: build the website
+    runs-on: ubuntu-22.04
+    steps:      
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/flake-checker-action@main
+      - name: Run `nix build`
+        run: nix build .
+      - uses: actions/upload-artifact@v4.3.3
+        with:
+          name: website
+          path: ./result/var/www/
+          if-no-files-found: error
+  deploy:
+    name: deploy to cloudflare pages
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - uses: actions/download-artifact@v4.1.7
+        with:
+          name: website
+          path: ~/website
+      - uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: fa9724f039eed67065f2b3e14608b8e1
+          projectName: webpage-academic
+          directory: ~/website
