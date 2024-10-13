@@ -8,4 +8,4 @@ weight: 30
 ---
 
 - PhD student (2023-today): Dept. of Computer Sciences, University of Wisconsin - Madison
-- B.Sc. (2019-2023): School of Software, Tsinghua University
+- B.Eng. (2019-2023): School of Software, Tsinghua University
